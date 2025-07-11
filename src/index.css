@@ -118,7 +118,7 @@ h1 {
   padding: 0;
 }
 
-.modal-actions {
+/* .modal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
@@ -131,7 +131,7 @@ h1 {
 .modal-actions .text-button:hover,
 .modal-actions .text-button:active {
   color: #312c1d;
-}
+} */
 
 .cart-total {
   display: flex;
@@ -197,6 +197,7 @@ h1 {
   padding: 0.5rem;
   border-radius: 4px;
   border: 1px solid #ccc;
+  background-color: white;
 }
 
 .control-row {
@@ -227,7 +228,7 @@ h1 {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: #ffc404;
+  /* color: #ffc404; */
 }
 
 .text-button:hover,
@@ -235,11 +236,7 @@ h1 {
   color: #ffab04;
 }
 
-.modal {
-  position: fixed;
-  /* top: 50%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); Perfect center */
+/* .modal {
   background-color: #e4ddd4;
   border-radius: 6px;
   border: none;
@@ -248,7 +245,7 @@ h1 {
   width: 80%;
   max-width: 40rem;
   animation: fade-slide-up 0.3s ease-out forwards;
-}
+} */
 
 .modal::backdrop {
   background-color: rgba(0, 0, 0, 0.55);

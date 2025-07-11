@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import { toast } from "react-hot-toast";
+import { createContext, useEffect, useReducer, useRef } from "react";
 
 const CartContext = createContext({
   items: [],
@@ -25,6 +26,18 @@ function cartReducer(state, action) {
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
       updatedItems.push({ ...action.item, quantity: 1 });
+
+      toast.success(`${action.item.name} added to the cart!`, {
+        style: {
+          border: "1px solid #ffc404",
+          padding: "16px",
+          color: "#1f1a09",
+        },
+        iconTheme: {
+          primary: "#ffc404",
+          secondary: "#1f1a09",
+        },
+      });
     }
 
     return {
@@ -65,6 +78,8 @@ export function CartContextProvider({ children }) {
   const [cart, dispatchCartAction] = useReducer(cartReducer, {
     items: [],
   });
+
+  const lastAddItemRef = useRef(null);
 
   function addItem(item) {
     dispatchCartAction({ type: "ADD_ITEM", item });

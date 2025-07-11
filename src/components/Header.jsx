@@ -23,7 +23,11 @@ const Header = () => {
         <h1>ReactFood</h1>
       </div>
       <nav>
-        <Button onClick={handleShowCart} textOnly>
+        <Button
+          onClick={handleShowCart}
+          textOnly
+          className={`text-[#FFC404] hover:text-[#312c1d]`}
+        >
           Cart {totalCartItems}
         </Button>
       </nav>
